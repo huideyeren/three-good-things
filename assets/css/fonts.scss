@@ -1,0 +1,16 @@
+/*
+ * Sawarabi Mincho (Japanese) https://fonts.google.com/earlyaccess
+ */
+@font-face {
+    font-family: 'Sawarabi Mincho';
+    font-style: normal;
+    font-weight: 400;
+    src: url(//fonts.gstatic.com/ea/sawarabimincho/v1/SawarabiMincho-Regular.eot);
+    src: url(//fonts.gstatic.com/ea/sawarabimincho/v1/SawarabiMincho-Regular.eot?#iefix) format('embedded-opentype'),
+         url(//fonts.gstatic.com/ea/sawarabimincho/v1/SawarabiMincho-Regular.woff2) format('woff2'),
+         url(//fonts.gstatic.com/ea/sawarabimincho/v1/SawarabiMincho-Regular.woff) format('woff'),
+         url(//fonts.gstatic.com/ea/sawarabimincho/v1/SawarabiMincho-Regular.ttf) format('truetype');
+}
+
+@import url('https://fonts.googleapis.com/css?family=Alegreya:400,400i,700,700i&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese');
+

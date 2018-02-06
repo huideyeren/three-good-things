@@ -1,5 +1,5 @@
 <template>
-  <section class="pa4 code">
+  <section class="pa4">
     <div class="bg-white-90 pa4">
       <div class="f1">Nuxt TypeScript Starter</div>
       <div class="f3">Selected Person: {{selectedPerson.first_name}} {{selectedPerson.last_name}} is #{{selected}}</div>

@@ -21,7 +21,7 @@ module.exports = {
   css: [
     { src: 'bulma', lang: 'sass' },
     'tachyons/css/tachyons.min.css',
-    { src: '~/assets/css/variables.scss', lang: "scss" }
+    { src: '~/assets/css/main.scss', lang: "scss" }
   ],
   build: {
     vendor: ['axios', 'gsap', 'vuex-class', 'nuxt-class-component'],
