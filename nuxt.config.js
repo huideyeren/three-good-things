@@ -18,9 +18,23 @@ module.exports = {
   /*
   ** Build configuration
   */
-  css: ['tachyons/css/tachyons.min.css', '~/assets/css/main.css'],
+  css: [
+    { src: 'bulma', lang: 'sass' },
+    'tachyons/css/tachyons.min.css',
+    { src: '~/assets/css/variables.scss', lang: "scss" }
+  ],
   build: {
-    vendor: ['axios', 'gsap', 'vuex-class', 'nuxt-class-component']
+    vendor: ['axios', 'gsap', 'vuex-class', 'nuxt-class-component'],
+    postcss: [
+      require('postcss-custom-properties')({
+        warnings: false
+      }),
+      require('autoprefixer')({
+        browsers: ['last 3 versions']
+      }),
+      require('postcss-sorting')(),
+      require('cssnano')()
+    ]
   },
   modules: ['~/modules/typescript.js']
 }
