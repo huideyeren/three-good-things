@@ -39,6 +39,7 @@ module.exports = {
   },
   modules: [
     '~/modules/typescript.js',
+    '@nuxtjs/font-awesome',
     [
       'nuxt-sass-resources-loader', { resources: './assets/css/variables.scss' }
     ],
