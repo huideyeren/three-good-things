@@ -1,4 +1,15 @@
 <template lang="pug">
-  .container
-    nuxt
+  .wrapper
+    .container
+      nuxt
+    footer-nav
 </template>
+
+<script lang="ts">
+import FooterNav from '~/components/FooterNav.vue'
+
+export default {
+  components: { FooterNav }
+}
+  
+</script>
