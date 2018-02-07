@@ -2,7 +2,7 @@
   footer.footer
     .container
       .content.has-text-centered
-        p.bottom-fix
+        p
           span.bottom-fix 3
           | つのいいこと日記 by 
           a(href='http://huideyeren.info/' target='blank') Iosif Takakura
