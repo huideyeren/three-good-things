@@ -2,8 +2,9 @@
   footer.footer
     .container
       .content.has-text-centered
-        p
-          | 3つのいいこと日記 by 
+        p.bottom-fix
+          span.bottom-fix 3
+          | つのいいこと日記 by 
           a(href='http://huideyeren.info/' target='blank') Iosif Takakura
         p
           | Original author is 
@@ -13,7 +14,15 @@
           a(href='http://opensource.org/licenses/mit-license.php' target='blank') MIT.
 </template>
 
-<script lang="ts">
+<style lang='scss'>
+
+span.bottom-fix {
+  vertical-align: 2px;  
+}
+
+</style>
+
+<script lang='ts'>
 import Vue from 'vue'
 import Component from 'nuxt-class-component'
 
