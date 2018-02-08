@@ -1,0 +1,23 @@
+{
+    // IntelliSense を使用して利用可能な属性を学べます。
+    // 既存の属性の説明をホバーして表示します。
+    // 詳細情報は次を確認してください: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Hare Dev",
+            "type": "node",
+            "request": "launch",
+            "protocol": "inspector",
+            "program": "${workspaceRoot}/node_modules/.bin/nuxt",
+            "stopOnEntry": false,
+            "args": ["dev"],
+            "cwd": "${workspaceRoot}",
+            "sourceMaps": true,
+            "env": {
+                "NODE_ENV": "development",
+                "DEBUG": "nuxt:*,app"
+            }
+        }
+    ]
+}

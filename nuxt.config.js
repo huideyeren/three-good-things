@@ -35,7 +35,12 @@ module.exports = {
       }),
       require('postcss-sorting')(),
       require('cssnano')()
-    ]
+    ],
+    extend(config, options) {
+      return Object.assign({}, config, {
+        devtool: 'source-map'
+      })
+    }
   },
   modules: [
     '~/modules/typescript.js',
@@ -43,5 +48,6 @@ module.exports = {
     [
       'nuxt-sass-resources-loader', { resources: './assets/css/variables.scss' }
     ],
-  ]
+  ],
+  devtool: 'source-map'
 }
