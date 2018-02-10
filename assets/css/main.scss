@@ -1,11 +1,31 @@
 body {
-    background-color: $background-color;
-    background-image: url("https://www.transparenttextures.com/patterns/beige-paper.png");
-    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-
-    font-family: 'Alegreya', 'Sawarabi Gothic', serif;
-  }
+  background-color: $background-color;
+  background-image: url("https://www.transparenttextures.com/patterns/wine-cork.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  font-family: 'Alegreya', 'Sawarabi Gothic', serif;
+}
 
 span.icon {
   font-family: FontAwesome;
+}
+
+span.bottom-fix {
+  vertical-align: 2px;  
+}
+
+.white-paper {
+  background-color: $paper-background-color;
+  background-image: url("https://www.transparenttextures.com/patterns/beige-paper.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+.wooden {
+  background-color: $wooden-color;
+  background-image: url("https://www.transparenttextures.com/patterns/dark-wood.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  color: $white;
+
+  a {
+    color: aqua;
+  }
 }

@@ -14,11 +14,7 @@
         | test1
 </template>
 
-<style lang='scss'>
-
-span.bottom-fix {
-  vertical-align: 2px;  
-}
+<style lang='scss' scoped>
 
 </style>
 

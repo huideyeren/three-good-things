@@ -1,5 +1,5 @@
 <template lang="pug">
-  footer.footer
+  footer.footer.wooden
     .container
       .content.has-text-centered
         p
@@ -14,11 +14,7 @@
           a(href='http://opensource.org/licenses/mit-license.php' target='blank') MIT.
 </template>
 
-<style lang='scss'>
-
-span.bottom-fix {
-  vertical-align: 2px;  
-}
+<style lang='scss' scoped>
 
 </style>
 

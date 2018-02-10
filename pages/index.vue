@@ -1,19 +1,13 @@
-<template>
-  <section class="pa4">
-    <div class="bg-white-90 pa4">
-      <div class="f1">Nuxt TypeScript Starter</div>
-      <div class="f3">Selected Person: {{selectedPerson.first_name}} {{selectedPerson.last_name}} is #{{selected}}</div>
-      
-    </div>
-    <div class="flex flex-wrap ph2 justify-between bg-white-80">
-      <div :key="person.id" v-for="person in people">
-        <Card :person="person"></Card>
-      </div>
-    </div>
-  </section>
+<template lang='pug'>
+  section.pa4
+    .white-paper.pa4
+      h1 3つのいいこと日記
+    .flex.flex-wrap.ph2.justify-between.white-paper
+      div(key='person.id' v-for='person in people')
+        Card(:person='person')
 </template>
 
-<script lang="ts">
+<script lang='ts'>
 import Vue from 'vue'
 import Component from 'nuxt-class-component'
 import Card from '~/components/Card.vue'
