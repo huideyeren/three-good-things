@@ -12,3 +12,4 @@ dist
 
 # 
 .env
+plugins/firebase.ts
