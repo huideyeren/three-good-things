@@ -16,7 +16,10 @@
         a.navbar-item
           | test1
       .navbar-end
-        button.button.wooden(onclick='auth()') 認証
+        .navbar-item
+          div(v-if='user') {{user.displayName}}
+          div(v-else)
+            button.button.wooden(@click='callAuth') 認証
 </template>
 
 <style lang='scss' scoped>
@@ -29,13 +32,11 @@
 <script lang='ts'>
 import vue from 'vue';
 import nuxtClassComponent from 'nuxt-class-component';
-import auth from '~/plugins/auth';
+import { Getter, Action } from 'vuex-class';
 
 export default class HeaderNav extends vue {
-  public user;
-  public users;
-  public posts;
-  public isLoaded;
+  @Getter user;
+  @Action callAuth;
 
   constructor() {
     super();
@@ -65,19 +66,6 @@ export default class HeaderNav extends vue {
           });
         }
       });
-    }
-  }
-
-  async mounted () {
-    if (process) {
-      if (!this.user) this.user = await auth();
-      await Promise.all([
-        this.user ? Promise.resolve() 
-          : this.$store.dispatch('SET_CREDENTIAL', { user: this.user || null }),
-        this.posts.length ? Promise.resolve() : this.$store.dispatch('INIT_POSTS'),
-        this.users.length ? Promise.resolve() : this.$store.dispatch('INIT_USERS'),
-      ]);
-      this.isLoaded = true;
     }
   }
 }
