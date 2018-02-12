@@ -1,3 +1,8 @@
+import postcssCustomProperties from 'postcss-custom-properties';
+import autoprefixer from 'autoprefixer';
+import postcssSorting from 'postcss-sorting';
+import cssnano from 'cssnano';
+
 module.exports = {
   env: {
     baseUrl: process.env.BASE_URL || 'http://localhost:3000',
@@ -27,14 +32,14 @@ module.exports = {
   build: {
     vendor: ['axios', 'gsap', 'vuex-class', 'nuxt-class-component'],
     postcss: [
-      require('postcss-custom-properties')({
+      postcssCustomProperties({
         warnings: false,
       }),
-      require('autoprefixer')({
+      autoprefixer({
         browsers: ['last 3 versions'],
       }),
-      require('postcss-sorting')(),
-      require('cssnano')(),
+      postcssSorting(),
+      cssnano(),
     ],
     extend(config, options) {
       return Object.assign({}, config, {
