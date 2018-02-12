@@ -1,7 +1,7 @@
-import postcssCustomProperties from 'postcss-custom-properties';
-import autoprefixer from 'autoprefixer';
-import postcssSorting from 'postcss-sorting';
-import cssnano from 'cssnano';
+const postcssCustomProperties = require('postcss-custom-properties');
+const autoprefixer = require('autoprefixer');
+const postcssSorting = require('postcss-sorting');
+const cssnano = require('cssnano');
 
 module.exports = {
   env: {
