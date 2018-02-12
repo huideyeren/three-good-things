@@ -9,7 +9,7 @@ module.exports = function () {
         appendTsSuffixTo: [/\.vue$/],
       },
     };
-    // Add TSlint
+    // Add TypeScript Lint
     config.module.rules.push({
       test: /\.ts$/,
       loader: 'tslint-loader',
@@ -27,11 +27,8 @@ module.exports = function () {
       tsLoader,
     ));
     // Add TypeScript loader for vue files
-    for (const rule of config.module.rules) {
-      if (rule.loader === 'vue-loader') {
-        rule.options.loaders.ts = tsLoader;
-      }
-    }
+    const vueLoader = config.module.rules.find(rule => (rule.loader === 'vue-loader'));
+    vueLoader.options.loaders.ts = tsLoader;
     // Add .ts extension in webpack resolve
     if (config.resolve.extensions.indexOf('.ts') === -1) {
       config.resolve.extensions.push('.ts');
