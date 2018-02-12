@@ -6,6 +6,7 @@ module.exports = function tsConfig() {
     const tsLoader = {
       loader: 'ts-loader',
       options: {
+        typeCheck: true,
         appendTsSuffixTo: [/\.vue$/],
       },
     };
