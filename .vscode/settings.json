@@ -1,10 +1,16 @@
 {
     "python.linting.enabled": false,
     "cSpell.words": [
+        "apikey",
+        "authdomain",
         "bulma",
+        "databaseurl",
         "devtool",
         "gsap",
+        "messagingsenderid",
         "nuxtjs",
+        "projectid",
+        "storagebucket",
         "tachyons",
         "vuex"
     ]
