@@ -1,7 +1,7 @@
 <template lang="pug">
   .wrapper
     header-nav-vue
-    .container
+    main.container
       nuxt
     footer.footer.wooden
       .container
