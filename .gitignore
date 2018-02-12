@@ -10,6 +10,5 @@ npm-debug.log
 # Nuxt generate
 dist
 
-# 
+# Environment Variables
 .env
-./plugins/firebase.ts
