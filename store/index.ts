@@ -4,7 +4,7 @@ import { firebaseMutations, firebaseAction } from 'vuexfire';
 const db = firebase.database();
 const usersRef = db.ref('/users');
 const postsRef = db.ref('/posts');
-const provider = new firebase.auth.GoogleAuthProvider();
+const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 
 export const state = () => ({
   selected: 1,
@@ -88,6 +88,6 @@ export const actions = {
     });
   }),
   callAuth () {
-    firebase.auth().signInWithRedirect(provider);
+    firebase.auth().signInWithRedirect(googleAuthProvider);
   },
 };
