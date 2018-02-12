@@ -41,11 +41,13 @@ module.exports = {
       postcssSorting(),
       cssnano(),
     ],
+    /* eslint-disable no-unused-vars */
     extend(config, options) {
       return Object.assign({}, config, {
         devtool: 'source-map',
       });
     },
+    /* eslint-enable no-unused-vars */
   },
   modules: [
     '~/modules/typescript.js',
