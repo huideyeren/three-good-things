@@ -41,7 +41,7 @@ module.exports = {
       cssnano(),
     ],
     /* eslint-disable no-unused-vars */
-    extend(config, options) {
+    extend(config, ctx) {
       return Object.assign({}, config, {
         devtool: 'source-map',
       });
@@ -49,6 +49,7 @@ module.exports = {
     /* eslint-enable no-unused-vars */
   },
   modules: [
+    '@nuxtjs/dotenv',
     '~/modules/typescript.js',
     '@nuxtjs/font-awesome',
     [

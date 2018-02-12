@@ -12,8 +12,11 @@
         span
         span
     #navMenu.navbar-menu.wooden
-      a.navbar-item
-        | test1
+      .navbar-start
+        a.navbar-item
+          | test1
+      .navbar-end
+        button.button.wooden(onclick='auth()') 認証
 </template>
 
 <style lang='scss' scoped>
@@ -26,8 +29,14 @@
 <script lang='ts'>
 import vue from 'vue';
 import nuxtClassComponent from 'nuxt-class-component';
+import auth from '~/plugins/auth';
 
 export default class HeaderNav extends vue {
+  public user;
+  public users;
+  public posts;
+  public isLoaded;
+
   constructor() {
     super();
     
@@ -56,6 +65,19 @@ export default class HeaderNav extends vue {
           });
         }
       });
+    }
+  }
+
+  async mounted () {
+    if (process) {
+      if (!this.user) this.user = await auth();
+      await Promise.all([
+        this.user ? Promise.resolve() 
+          : this.$store.dispatch('SET_CREDENTIAL', { user: this.user || null }),
+        this.posts.length ? Promise.resolve() : this.$store.dispatch('INIT_POSTS'),
+        this.users.length ? Promise.resolve() : this.$store.dispatch('INIT_USERS'),
+      ]);
+      this.isLoaded = true;
     }
   }
 }
