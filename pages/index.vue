@@ -1,26 +1,29 @@
 <template lang='pug'>
-  section.pa4
-    .white-paper.pa4
-      h1 3つのいいこと日記
-    .flex.flex-wrap.ph2.justify-between.white-paper
-      div(key='person.id' v-for='person in people')
-        Card(:person='person')
+  section.white-paper
+    h1.is-size-2
+      | みんなではげます
+      span.bottom-fix-5px 3
+      | つのいいこと日記
+    .wrapper
+      .columns.is-3.padding-75rem
+        div.column.is-centered(key='person.id' v-for='person in people')
+          card-vue(:person='person')
 </template>
 
 <script lang='ts'>
-import Vue from 'vue'
-import Component from 'nuxt-class-component'
-import Card from '~/components/Card.vue'
-import { State, Getter } from 'vuex-class'
+import vue from 'vue';
+import nuxtClassComponent from 'nuxt-class-component';
+import CardVue from '~/components/Card.vue';
+import { State, Getter } from 'vuex-class';
 
-@Component({
+@nuxtClassComponent({
   components: {
-    Card
-  }
+    CardVue,
+  },
 })
-export default class extends Vue {
-  @State selected
-  @State people
-  @Getter selectedPerson
+export default class extends vue {
+  @State selected;
+  @State people;
+  @Getter selectedPerson;
 }
 </script>

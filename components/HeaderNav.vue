@@ -1,28 +1,63 @@
 <template lang="pug">
-  nav.navbar(role="navigation",aria-label="main navigation")
+  nav.navbar.wooden(role="navigation",aria-label="main navigation")
     .navbar-brand
-      a(href='/')
-        span.icon: i.fas.fa-book
-        span.bottom-fix 3
-        | つのいいこと日記
-      button.button.navbar-burger
-        span test1
-        span test2
-
-    .navbar-menu
-      p
+      .navbar-item
+        a(href='/')
+          span.icon: i.fas.fa-book
+          | みんなではげます
+          span.bottom-fix-2px 3
+          | つのいいこと日記
+      button.button.navbar-burger.wooden(data-target="navMenu")
+        span
+        span
+        span
+    #navMenu.navbar-menu.wooden
+      a.navbar-item
         | test1
 </template>
 
 <style lang='scss' scoped>
-
+.navbar-brand a {
+  color: $white;
+  text-decoration: none;
+}
 </style>
 
 <script lang='ts'>
-import Vue from 'vue'
-import Component from 'nuxt-class-component'
+import vue from 'vue';
+import nuxtClassComponent from 'nuxt-class-component';
 
-export default class HeaderNav extends Vue {
+export default class HeaderNav extends vue {
+  constructor() {
+    super();
+    
+    if (typeof window !== 'undefined') {
+      // Get all "navbar-burger" elements
+      document.addEventListener('DOMContentLoaded', () => {
+        const $navbarBurgers 
+          = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+      
+        // Check if there are any navbar burgers
+        if ($navbarBurgers.length > 0) {
+          // Add a click event on each of them
+          $navbarBurgers.forEach(($el) => {
+            $el.addEventListener('click', () => {
+
+              // Get the target from the "data-target" attribute
+              const target = $el.dataset.target;
+              const $target = document.getElementById(target);
+
+              // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+              $el.classList.toggle('is-active');
+              if ($target !== null) {
+                $target.classList.toggle('is-active');
+              }
+            });
+          });
+        }
+      });
+    }
+  }
 }
 
 </script>

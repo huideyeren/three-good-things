@@ -1,6 +1,15 @@
-$background-color: #946038;
-$paper-background-color: #fff6d4;
-$footer-background-color: #fff6d4;
-$wooden-color: #946038;
-$wooden-link-color: aqua;
+// Elemental Colors
+$black: #4a4a4a;
 $white: #fff;
+$wood-brown: #946038;
+$ivory: #fff6d4;
+
+// Background Color Settings
+$background-color: $wood-brown;
+$paper-background-color: $ivory;
+$wooden-color: $wood-brown;
+$wooden-link-color: $white;
+
+// Font Color Settings
+$font-color-main: $black;
+$font-color-inverse: $white;

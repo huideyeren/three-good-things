@@ -2,30 +2,59 @@ body {
   background-color: $background-color;
   background-image: url("https://www.transparenttextures.com/patterns/wine-cork.png");
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-  font-family: 'Alegreya', 'Sawarabi Gothic', serif;
+  font-family: 'Alegreya', 'Sawarabi Mincho ', serif;
+  color: $font-color-main;
 }
 
 span.icon {
   font-family: FontAwesome;
 }
 
-span.bottom-fix {
+span.bottom-fix-2px {
   vertical-align: 2px;  
+}
+
+span.bottom-fix-5px {
+  vertical-align: 5px;  
 }
 
 .white-paper {
   background-color: $paper-background-color;
   background-image: url("https://www.transparenttextures.com/patterns/beige-paper.png");
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+
+  a {
+    color: $font-color-main;
+  }
 }
 
 .wooden {
   background-color: $wooden-color;
   background-image: url("https://www.transparenttextures.com/patterns/dark-wood.png");
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-  color: $white;
+  color: $font-color-inverse;
+
+  border-color: $font-color-inverse;
+
+  &.is-active {
+    border-color: $font-color-inverse;
+    color: $font-color-inverse;
+  }
 
   a {
-    color: $wooden-link-color;
+    color: $font-color-inverse;
+    text-decoration: underline;
   }
+
+  .white-paper a {
+    color: $font-color-main;
+  }
+}
+
+footer {
+  margin-top: 0.75rem;
+}
+
+.padding-75rem {
+  padding: 0.75rem;
 }

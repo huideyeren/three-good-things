@@ -25,7 +25,6 @@ module.exports = {
   */
   css: [
     { src: 'bulma', lang: 'sass' },
-    'tachyons/css/tachyons.min.css',
     { src: '~/assets/css/main.scss', lang: 'scss' },
     { src: '~/assets/css/fonts.scss', lang: 'scss' },
   ],
