@@ -22,8 +22,6 @@ import { State, Getter } from 'vuex-class';
   },
 })
 export default class extends vue {
-  @State selected;
   @State people;
-  @Getter selectedPerson;
 }
 </script>
