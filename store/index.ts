@@ -13,6 +13,7 @@ export const state = () => ({
   post: null,
   users: [],
   posts: [],
+  loading: false,
 });
 
 export const mutations = {
@@ -22,11 +23,17 @@ export const mutations = {
   setPeople(state, people) {
     state.people = people;
   },
-  setCredential (state, { user }) {
-    state.user = user;
+  setCredential (state, payload) {
+    state.user = payload;
   },
   savePost (state, { post }) {
     state.post = post;
+  },
+  resetCredential (state, payload) {
+    state.user = null;
+  },
+  setLoading (state, payload) {
+    state.loading = payload;
   },
   ...firebaseMutations,
 };
@@ -50,6 +57,7 @@ export const getters = {
   },
   users: state => state.users,
   user: state => state.user,
+  isLoading: state => state.loading,
 };
 
 export const actions = {
@@ -87,7 +95,24 @@ export const actions = {
       body,
     });
   }),
-  callAuth () {
-    firebase.auth().signInWithRedirect(googleAuthProvider);
+  async callAuth ({ commit }) {
+    commit('setLoading', true);
+    const authData = await firebase.auth().signInWithPopup(googleAuthProvider);
+    commit('setCredential', buildUserObject(authData));
+    commit('setLoading', false);
   },
+  async signOut ({ commit }) {
+    await firebase.auth().signOut();
+    commit('resetCredential');
+  },
+};
+
+const buildUserObject = (authData) => {
+  const { email, displayName, uid, photoURL } = authData.user;
+  const user = {};
+  user['email'] = email;
+  user['name'] = displayName;
+  user['uid'] = uid;
+  user['picture'] = photoURL;
+  return user;
 };

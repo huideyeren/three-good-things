@@ -16,10 +16,18 @@
         a.navbar-item
           | test1
       .navbar-end
-        .navbar-item
-          div(v-if='user') {{user.displayName}}
-          div(v-else)
-            button.button.wooden(@click='callAuth') 認証
+        div(v-if='user')
+          .navbar-item
+            .media
+              figure.media-left
+                img.image.is-36x36(:src="user.picture")
+              .media-content
+                .content
+                  p {{user.name}}
+              button.button.wooden.media-right(@click='signOut') ログアウト
+        div(v-else)
+          .navbar-item
+            button.button.wooden(@click='callAuth') ログイン
 </template>
 
 <style lang='scss' scoped>
@@ -34,9 +42,11 @@ import vue from 'vue';
 import nuxtClassComponent from 'nuxt-class-component';
 import { Getter, Action } from 'vuex-class';
 
-export default class HeaderNav extends vue {
+@nuxtClassComponent({})
+export default class HeaderNavVue extends vue {
   @Getter user;
   @Action callAuth;
+  @Action signOut;
 
   constructor() {
     super();
